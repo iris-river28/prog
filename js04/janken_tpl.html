@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+<title>じゃんけん</title>
+</head>
+<body>
+
+<header>
+  <h1>じゃんけん</h1>
+</header>
+
+<main>
+  <div><center>COM<br><span id="pc_hands"><img src="janken.png"width="105px"></span></center></div>
+  <br>
+  <center>  <div id="judgment">じゃんけんポン！</div>  </center>
+  <div id="br"><br></div>
+
+  <ul>
+    <li id="gu_btn"><img src="gu.png"width="100px"></li>
+    <li id="cho_btn"><img src="cho.png"width="100px"></li>
+    <li id="par_btn"><img src="par.png"width="100px"></li>
+  </ul>
+  <div><center>YOU</center></div>
+
+</main>
+
+<footer></footer>
+<script>
+$("#br").hide(400).show(500).hide(400).show(500).hide(400);
+//じゃんけん用のSCRIPTを書いてください
+//*1.クリックイベントを３個用意
+//*2.乱数を作成
+//*3.IF文を３個用意「グー,チョキ,パー」
+//*4.表示させる
+
+
+//自分がグー
+$("#gu_btn").on("click",function(){
+
+    //乱数を作る1~3
+    const num = Math.ceil(Math.random() *3);
+    if(num == 1){
+        //$("#pc_hands").html("グー");
+        $("#pc_hands").html('<img src="gu.png"width="100px">');
+        $("#judgment").html("引き分け");
+    }
+    if(num == 2){
+        //$("#pc_hands").html("チョキ");
+        $("#pc_hands").html('<img src="cho.png"width="100px">');
+        $("#judgment").html("勝ち");
+    }
+    if(num == 3){
+        //$("#pc_hands").html("パー");
+        $("#pc_hands").html('<img src="par.png"width="100px">');
+        $("#judgment").html("負け");
+    }
+});
+//自分がチョキ
+$("#cho_btn").on("click",function(){
+    //乱数を作る1~3
+    const num = Math.ceil(Math.random() *3);
+    if(num == 1){
+        //$("#pc_hands").html("グー");
+        $("#pc_hands").html('<img src="gu.png"width="100px">');
+        $("#judgment").html("負け");
+    }
+    if(num == 2){
+        //$("#pc_hands").html("チョキ");
+        $("#pc_hands").html('<img src="cho.png"width="100px">');
+        $("#judgment").html("引き分け");
+    }
+    if(num == 3){
+        //$("#pc_hands").html("パー");
+        $("#pc_hands").html('<img src="par.png"width="100px">');
+        $("#judgment").html("勝ち");
+    }
+});
+//自分がパー
+$("#par_btn").on("click",function(){
+    //乱数を作る1~3
+    const num = Math.ceil(Math.random() *3);
+    if(num == 1){
+        //$("#pc_hands").html("グー");
+        $("#pc_hands").html('<img src="gu.png"width="100px">');
+        $("#judgment").html("勝ち");
+    }
+    if(num == 2){
+        //$("#pc_hands").html("チョキ");
+        $("#pc_hands").html('<img src="cho.png"width="100px">');
+        $("#judgment").html("負け");
+    }
+    if(num == 3){
+        //$("#pc_hands").html("パー");
+        $("#pc_hands").html('<img src="par.png"width="100px">');
+        $("#judgment").html("引き分け");
+    }
+});
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
