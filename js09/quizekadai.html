@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+<title>クイズ練習（複数）</title>
+</head>
+<body>
+
+<header>
+    <h1 id="num">クイズ練習（複数）</h1>
+</header>
+
+<main>
+  <p id="quest">ここに問題が出題されます</p>
+  <p>
+    <input type="radio" name="toi" value="1"><span id="toi1">選択肢１</span>
+    <input type="radio" name="toi" value="2"><span id="toi2">選択肢２</span>
+    <input type="radio" name="toi" value="3"><span id="toi3">選択肢３</span>
+  </p>
+</main>
+
+<footer>フッター</footer>
+<script>
+//ここから記述領域［START］
+
+  //以下に配列を記述してください。
+  //問題文[配列]
+const qs = [
+    "第１問　　マスクメロンの「マスク」とは？",
+    "第２問　　二十世紀梨が発見されたのはいつ？",
+    "第３問　　ウォッカの名前の由来は？",
+    "第４問　　シュークリームの「シュー」とは？",
+    "第５問　　ラーメンの丼にある渦巻き模様は、何を意味している？",
+    "第６問　　カルピスの、ラベルの水玉が表しているのは？"
+];
+
+  //回答選択肢[多重配列]
+const toi = [
+    ["仮面","香り","偽物"],
+    ["十九世紀","二十一世紀","二十世紀"],
+    ["強烈な","水","火"],
+    ["パリパリ","山","キャベツ"],
+    ["雲","渦潮","雷"],
+    ["天の川","青春の記憶","恋心"]
+];
+
+  //答え[配列]
+const ans = [2,1,2,3,3,1];
+
+  //1.最初の問題文＆回答選択肢＆回答値を設定
+let i = 0;
+$("#quest").html( qs[i] );
+$("#toi1").html( toi[i][0] );
+$("#toi2").html( toi[i][1] );
+$("#toi3").html( toi[i][2] );
+
+  //2.ラジオボタンをクリックしたらイベント発生！(クリックイベント)
+let j=0;
+$("[name=toi]").on("click", function(){
+    const v = $(this).val();
+    if(ans[i] == v){
+       $("h1").text("正解");
+        j++;
+    }else{
+        $("h1").text("不正解");
+    }
+    if(i<5){
+        i++;
+        $("#quest").html( qs[i] );
+        $("#toi1").html( toi[i][0] );
+        $("#toi2").html( toi[i][1] );
+        $("#toi3").html( toi[i][2] );
+    }else{
+        alert('終了'+ j +'問正解！');
+    }
+});
+
+//ここまでが記述領域［END］
+</script>
+</body>
+</html>
