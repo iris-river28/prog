@@ -1,0 +1,73 @@
+body {
+    background-image: url("../img/map4.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+header{
+    font-family: "Yu Gothic UI";
+}
+table{
+    border-collapse: collapse;
+    width:40%;
+    border: solid 0px;
+    text-align: center;
+}
+table th, table td {
+    border: solid 0px;
+    padding: 10px;/*上下左右10pxずつ*/
+}
+ul{
+    padding: 0;
+    /*border-top: 1px solid #000000;*/
+    display:table;  /* 定義 */
+    /*table-layout: fixed;*/
+    width:56.5%;
+    margin-right: auto;
+    margin-left: auto;
+}
+li{
+    text-align: center;
+    list-style-type:none;
+    /*border: 0px solid #666;*/
+    background-color: rgba(250,250,250,0.5);
+    display:table-cell;  /* 定義 */
+    cursor: pointer;
+}
+/*
+li:hover{
+    background: #0066CC;
+    color:#fff;
+}
+*/
+button.button1{
+    font-size: 1.0em;    /* 文字サイズを1.4emに指定 */
+    padding: 5px 10px;    /* 縦方向、横方向の余白を指定 */
+    border-radius: 100vh;    /*丸ボタン*/
+}
+button.button2{
+    font-size: 1.0em;    /* 文字サイズを1.4emに指定 */
+    padding: 5px 10px;    /* 縦方向、横方向の余白を指定 */
+    border-radius: 50%;
+    line-height: 100px;
+    width: 100px;
+    height: 100px;
+    padding: 0;
+}
+button.button3{
+    font-size: 1.0em;    /* 文字サイズを1.4emに指定 */
+    font-weight: bold;    /* 文字の太さをboldに指定 */
+    padding: 10px 30px;    /* 縦方向、横方向の余白を指定 */
+    background-color: #d33;    /* 背景色を指定 */
+    color: #fff;    /* 文字色を指定 */
+    border-style: none;    /* ボーダーをなくす */
+}
+button.button4{
+    font-size: 1.0em;    /* 文字サイズを1.4emに指定 */
+    font-weight: bold;    /* 文字の太さをboldに指定 */
+    padding: 10px 30px;    /* 縦方向、横方向の余白を指定 */
+    background-color: #55d;    /* 背景色を指定 */
+    color: #fff;    /* 文字色を指定 */
+    border-style: none;    /* ボーダーをなくす */
+}

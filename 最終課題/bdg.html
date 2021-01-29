@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bdg.css" type="text/css">
+</head>
+<header>
+    <h1 align="center" class="name">ボードゲーム用ユーティリティ</h1>
+</header>
+<body>
+    <table border="1" align="center">
+         <tr>
+             <th>
+                 <p>ダイス</p>
+                 <p id="num_d">0回目</p>
+                 <p id="dice_result"><img src='img/un.png'></p>
+                 <button onclick="dice()" class="button1">クリック</button>
+<!--                  <p id="d_result"><span id="ami">?</span></p>-->
+             </th>
+             <th>
+                 <button onclick="reset()" class="button2">リセット</button>
+             </th>
+             <th>
+                 <p>コイン</p>
+                 <p id="num_c">0回目</p>
+                 <p id="coin_result"><img src='img/un.jpg' width='64' height='64'></p>
+                 <button onclick="coin()" class="button1">クリック</button>
+<!--                  <p id="c_result"><span id="ami">?</span></p>-->
+             </th>
+         </tr>
+    </table>
+    <br>
+    <p align="center">カウンター</p>
+        <ul>
+            <li><button onclick="down1()" class="button3">－</button></li>
+            <li><p id="count1">0</p></li>
+            <li><button onclick="up1()" class="button4">＋</button></li>
+        </ul>
+        <ul>
+            <li><button onclick="down2()" class="button3">－</button></li>
+            <li><p id="count2">0</p></li>
+            <li><button onclick="up2()" class="button4">＋</button></li>
+        </ul>
+        <ul>
+            <li><button onclick="down3()" class="button3">－</button></li>
+            <li><p id="count3">0</p></li>
+            <li><button onclick="up3()" class="button4">＋</button></li>
+        </ul>
+        <ul>
+            <li><button onclick="down4()" class="button3">－</button></li>
+            <li><p id="count4">0</p></li>
+            <li><button onclick="up4()" class="button4">＋</button></li>
+        </ul>
+
+<script>
+//ダイス
+    var num1 = 0;
+    function dice() {
+//        let   d = document.getElementById("d_result");
+        let  dd = document.getElementById("dice_result");
+        let  dr = Math.floor(Math.random() * 6 + 1);
+//        if(dr==6){
+//            d.innerHTML = 6
+//        }else if(dr == 5){
+//            d.innerHTML = 5
+//        }else if(dr == 4){
+//            d.innerHTML = 4
+//        }else if(dr == 3){
+//            d.innerHTML = 3
+//        }else if(dr == 2){
+//            d.innerHTML = 2
+//        }else if(dr == 1){
+//            d.innerHTML = 1
+//        }
+        dr = dr + ".png";
+        dd.innerHTML = "<img src='img/" + dr + "' width='64' height='64'>";
+//ダイスカウント
+        let m = document.getElementById("num_d");
+        num1 += 1;
+        m.innerHTML = num1 + "回目";
+    }
+
+//コイン
+    var num2 = 0;
+    function coin() {
+//        let c = document.getElementById("c_result");
+        let cd = document.getElementById("coin_result");
+        let cr = Math.floor(Math.random() * 2 + 1);
+        if(cr == 1){
+            cr = cr + ".jpg";
+//            c.innerHTML = "表";
+        }else{
+            cr = cr + ".jpg";
+//            c.innerHTML = "裏";
+        }
+        cd.innerHTML = "<img src='img/" + cr + "' width='64' height='64'>";
+//コインカウント
+        let n = document.getElementById("num_c");
+        num2 += 1;
+        n.innerHTML = num2 + "回目";
+      }
+    
+    function reset() {
+        let re_numd = document.getElementById("num_d");
+        let re_numc = document.getElementById("num_c");
+        let re_d = document.getElementById("dice_result");
+        let re_c = document.getElementById("coin_result");
+        re_numd.innerHTML = 0 + "回目";
+        re_numc.innerHTML = 0 + "回目";
+        re_d.innerHTML = "<img src='img/un.png'>";
+        re_c.innerHTML = "<img src='img/un.jpg' width='64' height='64'>";
+        num1=0;
+        num2=0;
+    }
+
+//カウンターup down
+//1
+    var count1_value = 0;
+    function up1() {
+        let i = document.getElementById("count1");
+        count1_value += 1;
+        i.innerHTML = count1_value;
+    }
+    function down1() {
+        let i = document.getElementById("count1");
+        count1_value -= 1;
+        i.innerHTML = count1_value;
+    }
+//2
+    var count2_value = 0;
+    function up2() {
+        let j = document.getElementById("count2");
+        count2_value += 1;
+        j.innerHTML = count2_value;
+    }
+    function down2() {
+        let j = document.getElementById("count2");
+        count2_value -= 1;
+        j.innerHTML = count2_value;
+    }
+//3
+    var count3_value = 0;
+    function up3() {
+        let k = document.getElementById("count3");
+        count3_value += 1;
+        k.innerHTML = count3_value;
+    }
+    function down3() {
+        let k = document.getElementById("count3");
+        count3_value -= 1;
+        k.innerHTML = count3_value;
+    }
+//4
+    var count4_value = 0;
+    function up4() {
+        let l = document.getElementById("count4");
+        count4_value += 1;
+        l.innerHTML = count4_value;
+    }
+    function down4() {
+        let l = document.getElementById("count4");
+        count4_value -= 1;
+        l.innerHTML = count4_value;
+    }
+</script>
+</body>
+</html>
